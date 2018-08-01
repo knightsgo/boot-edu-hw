@@ -1,4 +1,4 @@
-BeanFactory, ApplicationContext, WebApplicationContext
+﻿BeanFactory, ApplicationContext, WebApplicationContext
 -> Bean Container, DI Container, IoC Container
 
 Bean 이란?
@@ -12,7 +12,7 @@ Spring의 BeanContainer 에서 관리하는 객체를 Bean이라고 한다.
 
 2. 왜 이런 방식을 사용하는가?
 
-
+ 
 - jvm은 classloader가 classpath에서 class를 찾는다.
 기본적인 classloader 는 system classloader 이다.
 사용자가 만드는 classloader는 custom classloader 이다.
