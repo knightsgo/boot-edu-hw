@@ -1,0 +1,58 @@
+BeanFactory, ApplicationContext, WebApplicationContext
+-> Bean Container, DI Container, IoC Container
+
+Bean 이란?
+Spring의 BeanContainer 에서 관리하는 객체를 Bean이라고 한다.
+
+1. Bean을 등록하는 방법
+- xml 파일 사용 (최초)
+- java config 파일
+- xml -> java config import, java config -> xml import
+- Component Scan
+
+2. 왜 이런 방식을 사용하는가?
+
+
+- jvm은 classloader가 classpath에서 class를 찾는다.
+기본적인 classloader 는 system classloader 이다.
+사용자가 만드는 classloader는 custom classloader 이다.
+
+WAS도 WebApplication 별로 Classloader를 가지고 있다.
+Classloader는 Parents 를 가지고 있다.(상위 Classloader)
+
+
+3. AOP : 관점 지향 프로그래밍
+종단관점을 관통하는 횡단 관점
+Advice : 무엇을 넣을 것이냐? ( 객체)
+JoinPoint : 언제 넣을 것이냐? (관점)
+PointCut : Advice와 JoinPoint 의 매핑정보
+Aspect = Advice + JoinPoint + PointCut
+
+스프링은 실제 할당되는 Proxy객체에 대입해준다.
+interface가 있어야 Proxy를 만들 수 있다.
+
+스프링은 Layerd Architecture를 사용한다.
+Presentation Layer, Business Layer, .... 등
+
+View 에는 화면의 유무로 갈리는데, 
+화면이 있는 경우 boot를 쓸때는 jsp를 쓸 수가 없다. (embeded tomcat을 쓸 경우)
+View를 출력하기 위해 별도의 템플릿엔진을 사용한다.
+
+Controller는 Service를 사용하여 결과물을 만들어 낸다.
+
+Singleton 구조에서는 Controller가 Service를 가질때 공용객체가 된다. 메모리엔 하나만 올라감
+
+Bean을 가리키는 유니크한 ID = Methoad명(@Bean 이 붙은 메소드중)
+
+Spring에서는 Bean을 Singleton 으로 관리한다.
+
+HW01. ClassLoader에 대해 조사하세요
+HW02. ClassLoader의 계층구조
+HW03. JVM 메모리 구조
+HW04. AOP의 용어 정리(그림있으면 좋음)
+HW05. Proxy
+HW06. Thread와 공용객체
+HW07. Gradle이 무엇인가. Maven이 무엇인가.
+
+
+
