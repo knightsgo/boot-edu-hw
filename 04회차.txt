@@ -1,0 +1,38 @@
+JDBC - java.sql.* 인터페이스에 대한 구현체를 자체적으로 지원하지 않는다.
+
+인터페이스 : Connection, Statement, ResultSet
+
+구현클래스는 DB Vendor에서 제공 -> driver class
+
+SQL Mapper: mybatis, spring-jdbc : SQL 결과를 객체에 담아줌.
+
+Entity Manager : 알아서 쿼리를 만들어준다. Datasource에 의존한다.
+Transactionn Manager : 마찬가지로 Datasource에 의존한다.
+
+ORM : Hibernate
+
+표준등장 : JPA, Hibernate에서도 구현가능함
+JPA를 쓰기 쉽게 해주는 Spring Data JPA를 제공
+starter-jpa : hibernate + jpa 등등
+
+javax.sql.* : datasource - connection
+
+boot에서는 hikari라는 datasource를 사용한다.
+
+EntityManager는 영속상태가되면 Snapshot을 하나 뜬다.
+최초의 Snapshot과 마지막 버전을 비교하여 변경된 내용을 DB에 1번만 Update를 한다.(Transaction이 종료가 될때)
+
+Serializable(객체직렬화, java.io.serializable, 메소드가 없음, 이러한 interface를 Mark Interface라고 한다)
+객체직렬화가 가능한 것은 Serializable을 구현하고 있는 객체와 기본형 타입(primitive)만 가능하다
+객체는 메모리에 byte의 모음으로 저장되어있다. 객체를 byte의 흐름으로 만든다. 멤버들도 다 직렬화로 구현해놔야 한다.
+
+@Repository 라는 Annotation이 붙어있다고 보면됨.
+JPARepository를 구현하지 않아도 됨 내부적으로 Entity Manager를 사용함
+메소드를 만들때 네이밍룰이 정해져있음
+사용가능한 메소드
+1. Method Query (ex. countByNameContains:%Name% 의 count를 구함)
+2. Query Annotaion (jpql, sql 사용가능)
+
+
+의존성주입.
+구성요소간의 의존 관계가 소스코드 내부가 아닌 외부의 설정파일 등을 통해 정의되게 하는 디자인 패턴 

@@ -1,0 +1,41 @@
+servlet filter(JEE에서 제공하는기술) : 스프링이 제공하는 Filter에서 사용하는 형태 -> 사용자가 작성한 필터를 Bean으로 등록하고 
+=> Spring Security
+-> Dispatcher Servlet 오기전에 Filter
+
+
+Intercepter
+Dispatcher Servlet과 Controller 사이에서 Filter처럼 동작함
+
+
+메소드의 파라메터를 채워넣어주는 역할을 Argument Resolver 가 자동으로 넣어줌
+ex) LoginInfo(~) 매번 넣을 수 없으니 Resolver를 만들어서 Resolver가 자동으로 넣게 함
+
+
+추천도서 : Effective Java
+
+디자인 패턴 - Builder 패턴
+
+이펙티브 Java에 나오는 Builder 패턴을 lombok을 이용해서 사용 가능
+
+
+Adapter들이 모두 Deprecate됨
+1.8에서는 Interface를 구현할수가 있게 됨.(default메소드로)
+
+Request Scope : Interceptor에 값을 담아주면 Request가 끝날때까지 살아남아있다.
+
+ThreadLocal : 같은 Thread안에서는 정보를 공유할 수 있다.
+
+Java Reflection : 객체를 생성하고 동적으로 메소드를 호출 - Framework나 Library용
+
+
+HW01. Effective Java - Builder Pattern 이란?, - lombok 사용
+
+HW02. java interface의 default 메소드
+
+HW03. Java 웹 프로그래밍의 4가지 Scope
+page, request, session, application
+
+HW04. ThreadLocal
+
+
+
